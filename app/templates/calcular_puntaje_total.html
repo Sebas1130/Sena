@@ -1,0 +1,14 @@
+<form method="post" action="{% url 'calcularPuntaje' %}">
+    {% csrf_token %}
+    <label for="partidos_ganados">Partidos ganados:</label>
+    <input type="number" name="partidos_ganados">
+    <label for="partidos_perdidos">Partidos perdidos:</label>
+    <input type="number" name="partidos_perdidos">
+    <label for="partidos_empatados">Partidos empatados:</label>
+    <input type="number" name="partidos_empatados">
+    <button type="submit">Calcular puntaje total</button>
+</form>
+
+{% if puntaje_total %}
+    <p>El puntaje total del equipo en el torneo apertura es: {{ puntaje_total }}</p>
+{% endif %}

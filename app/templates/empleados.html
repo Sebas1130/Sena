@@ -1,0 +1,12 @@
+<form method="post" action="{% url 'empleados' %}">
+    {% csrf_token %}
+    <label for="horas_laboradas">Horas laboradas:</label>
+    <input type="number" name="horas_laboradas">
+    <label for="tarifa_por_hora">Tarifa por hora:</label>
+    <input type="number" name="tarifa_por_hora">
+    <button type="submit">Calcular salario</button>
+</form>
+
+{% if salario %}
+    <p>El salario del empleado es: {{ salario }}</p>
+{% endif %}
